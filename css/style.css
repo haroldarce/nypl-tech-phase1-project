@@ -1,15 +1,16 @@
 /*css reset*/
 * {
+    box-sizing: border-box;
+    line-height: 1.75;
     margin: 0;
     padding: 0;
-    line-height: 1.75;
-    box-sizing: border-box;
 }
 html{
     font-size: 18px;
 }
 
 body{
+    color: rgba(0,20,100,0.7);
     font-family: 'Germania One', cursive;
 }
 p{
@@ -25,73 +26,71 @@ figcaption{
 
 /*NAVBAR*/
 .navbar{
-    text-align: center;
-    /*set the navbar to fixed position*/
+    background: rgba(20,20,20,0.1);
     position: fixed;
+    text-align: center;
+    /*navbar to fixed position*/
     top: 0;
     width: 100vw;
-    background: rgba(20,20,20,0.1);
 }
-
-/*Compass Icon
-.fa-compass {
-    font-size: 30px;
-}*/
 .navbar ul li{
     flex-grow: 1;
 }
-
 .navbar ul li: first-child{
     flex-grow: 2;
 }
-
-.navbar a{
-    color: rgba(0,20,100,0.7);
-}
 .navbar nav ul{
     display: flex;
+    justify-content:space-evenly;
     /*remove bullets*/
     list-style-type: none;
-    width: 60%;
     margin: 0 auto;
+    width: 100%;
 }
 .navbar nav ul a:link{
     /*remove underline*/
+    color: rgba(0,20,100,0.7);
     text-decoration: none;
     display: block;
-    padding: 10px 0;
+    padding: 12px 0;
 }
 .navbar nav ul a:hover{
     background: rgba(0,20,100,0.4);
     color: #fff;
 }
+
 /*HEADER*/
 header{
-    padding: 8%;
-    width: 99vw;
-    height: 70vh;
     background-color: #9A9A9A;
-    background-image: url("../img/header/header.jpg");
+    background-image: url("../img/home/header3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    height: 70vh;
+    padding: 8%;
+    width: 100%;
 }
 
-header h1,h2{
-    color: rgba(20,20,50,0.8);
-    text-align: left;
+.header{
+    height: 20vh;
+    padding: 20px 0;
+    margin: 30px;
+}
+h1,h2{
+    text-align: center;
+    text-shadow: 4px 4px 8px #6D6466;
 }
 /*SECTION IMAGES*/
 section{
-    margin: 5vh 0 50vh;
-    height: 80%;
-    max-width: 100vw;
+    align-items: center;
     display: flex;
     flex-direction:column;
-    align-items: center;
+    height: 80%;
+    margin: 5vh 0 8vh;
+    max-width: 100vw;
 }
 figure{
-    margin-bottom: 10vh;
+    margin-bottom: 8vh;
 }
 figure img{
     max-width: 100%;
@@ -100,11 +99,11 @@ figure img{
 }
 
 figure img:hover{
-    box-shadow: 0 0 2px 1px rgba(0, 150, 186, 0.7);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 2, 0.5);
+    /*box-shadow: 0 0 5px 5px rgba(0, 150, 186, 0.7);*/
 }
 
 figcaption{
-    color: rgba(20,20,50,0.8);
     text-align: center;
 }
 
@@ -113,9 +112,9 @@ figcaption{
 	background: rgba(0,20,100,0.6);
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
-	width: 100%;
-	text-align: left;
 	font: normal 16px sans-serif;
+	text-align: left;
+	width: 100%;
 
 	padding: 45px 50px;
 	margin-top: 80px;
@@ -130,6 +129,7 @@ figcaption{
 /* Footer links */
 
 .footer-distributed p.footer-links{
+    color:  #fff;
 	font-size:18px;
 	font-weight: bold;
 	color:  #ffffff;
@@ -138,10 +138,10 @@ figcaption{
 }
 
 .footer-distributed p.footer-links a{
+    color:  inherit;
 	display:inline-block;
 	line-height: 1.8;
 	text-decoration: none;
-	color:  inherit;
 }
 
 .footer-distributed .footer-right{
@@ -166,6 +166,14 @@ figcaption{
 }
 
 /* Media queries */
+@media only screen and (max-width: 600px) {
+    html{
+        font-size: 14px;
+    }
+    img{
+        flex-direction: column;
+    }
+}
 
 @media (max-width: 600px) {
 
@@ -173,13 +181,16 @@ figcaption{
 	.footer-distributed .footer-right{
 		text-align: center;
 	}
-
 	.footer-distributed .footer-right{
 		float: none;
 		margin: 0 auto 20px;
 	}
-
 	.footer-distributed .footer-left p.footer-links{
 		line-height: 1.8;
 	}
+}
+@media screen and (max-width: 500px) {
+  .navbar a{
+    display: block;
+  }
 }
